@@ -6,19 +6,27 @@
 
 ```
 cyclestudies/
-├── main.go              # 主程序（Web 查看器）
-├── type.go              # 数据结构定义
-├── go.mod               # Go 模块依赖
-├── img.png              # Token 获取教程截图
-├── data/                # 消息数据存储目录
-├── scripts/             
-│   └── dc_api/          # Discord API 抓取脚本
+├── main.go                 # 主程序（Web 查看器）
+├── init.go                 # 初始化逻辑
+├── cache.go                # 缓存管理
+├── config.go               # 配置处理
+├── type.go                 # 数据结构定义
+├── go.mod                  # Go 模块依赖
+├── img.png                 # Token 获取教程截图
+├── Makefile                # 构建脚本
+├── refresh.log             # 刷新日志
+├── data/                   # 📂 消息数据存储目录
+│   └── *.json              # 抓取的 Discord 消息文件
+├── scripts/
+│   └── dc_api/             # 📂 Discord API 抓取脚本
 │       ├── main.go
-│       ├── config.json           # ❌ 不提交
-│       ├── config.local.json     # ❌ 不提交
-│       ├── config.example.json
+│       ├── config.json           # ❌ 不提交（含 Token 和敏感信息）
+│       ├── config.local.json     # ❌ 不提交（本地覆盖配置）
+│       ├── config.example.json   # ✅ 提交（配置模板）
+│       ├── proxy.txt             # 代理配置文件（可选）
 │       └── README.md
-└── .gitignore
+├── .gitignore              # Git 忽略规则
+└── README.md               # 项目说明（本文件）
 ```
 
 ## 🚀 快速开始
@@ -190,6 +198,26 @@ if diff >= 0 && diff <= 5*time.Minute {  // 🔥 修改这里
     shouldMerge = true
 }
 ```
+
+## 如果你已经下载了编译好的 EXE 文件，使用方式如下：
+### 配置代理（在大陆的表哥一定要配置）
+
+在 EXE 的**同级目录**下创建 `proxy.txt` 文件：
+
+```bash
+# Windows: 右键创建新文本文档，重命名为 proxy.txt
+# 或在 PowerShell 中运行：
+echo "http://127.0.0.1:7890" > proxy.txt
+```
+
+或者用任何文本编辑器（如 Notepad、VS Code）创建，内容为：
+
+```
+http://127.0.0.1:7890
+```
+
+> **说明：** `7890` 是常见 VPN/代理软件（如 Clash、v2rayN 等）的默认代理端口。  
+> 如果你使用其他代理工具，请根据该工具的设置更改端口号。
 
 ## 📝 常见问题
 
