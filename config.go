@@ -36,6 +36,18 @@ func fetchPostConfigurations() ([]PostConfig, error) {
 	fileContent, err := os.ReadFile(PostFiles)
 	if err != nil {
 		configs = []PostConfig{
+			// 2025年下半年
+			{MonthStr: "12月", Title: "2025年12月", SubTitle: "百万Eric_王老板", FileName: "2025-12.json", PostID: "1445638241280856124"},
+			{MonthStr: "11月", Title: "2025年11月", SubTitle: "百万Eric_王老板", FileName: "2025-11.json", PostID: "1433398128903716894"},
+			{MonthStr: "10月", Title: "2025年10月", SubTitle: "百万Eric_王老板", FileName: "2025-10.json", PostID: "1423490495564480572"},
+			{MonthStr: "9月", Title: "2025年9月", SubTitle: "百万Eric_王老板", FileName: "2025-09.json", PostID: "1413021500721594389"},
+			{MonthStr: "8月", Title: "2025年8月", SubTitle: "百万Eric_王老板", FileName: "2025-08.json", PostID: "1401143021063634975"},
+			{MonthStr: "7月", Title: "2025年7月", SubTitle: "百万Eric_王老板", FileName: "2025-07.json", PostID: "1389861377702629376"},
+			// 2025年上半年
+			{MonthStr: "5月", Title: "2025年5月", SubTitle: "百万Eric_王老板", FileName: "2025-05.json", PostID: "1370596955968901240"},
+			{MonthStr: "4月", Title: "2025年4月", SubTitle: "百万Eric_王老板", FileName: "2025-04.json", PostID: "1355769346667974737"},
+			{MonthStr: "3月", Title: "2025年3月", SubTitle: "百万Eric_王老板", FileName: "2025-03.json", PostID: "1345024846194675833"},
+			{MonthStr: "2月", Title: "2025年2月", SubTitle: "百万Eric_王老板", FileName: "2025-02.json", PostID: "1336592565876559872"},
 			{MonthStr: "1月", Title: "2025年1月", SubTitle: "百万Eric_王老板", FileName: "2025-01.json", PostID: "1325716407458992199"},
 		}
 		fmt.Printf("✅ %s 获取默认 %d 个频道配置\n", PostFiles, len(configs))
