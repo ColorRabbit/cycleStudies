@@ -221,7 +221,7 @@ http://127.0.0.1:7890
 > 如果你使用其他代理工具，请根据该工具的设置更改端口号。
 
 ## macOS 使用与打包
-* 下载 [EricChatViewer.dmg](EricChatViewer.dmg)
+* 下载 [EricChatViewer.dmg](EricChatViewer.dmg?raw=true)
 * 双击打开 DMG，拖拽 [新手答疑](macOS/%E6%96%B0%E6%89%8B%E7%AD%94%E7%96%91) 到任意文件夹
 * 第一次打开时若遇到 Gatekeeper，选择“仍要打开”并信任来源
 * 若需要代理，确保在同级目录放置 proxy.txt，内容为代理地址，例如：http://127.0.0.1:7890
