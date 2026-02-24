@@ -26,6 +26,7 @@ const (
 	Port          = "9966"
 	GuildID       = "1159839373001498718" // 可选，特定判断公会ID
 	ChannelID     = "1325014797057785867" // 可选，特定判断频道ID （新手答疑）
+	CacheDir      = "msg_cache"           // 本地消息缓存目录
 )
 
 // fetchPostConfigurations 从外部文件获取 PostConfig 列表
