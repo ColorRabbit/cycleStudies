@@ -4,3 +4,5 @@ macOS/
 
 config.local.txt
 config.local.json
+
+*.exe

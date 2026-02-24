@@ -203,6 +203,7 @@ if diff >= 0 && diff <= 5*time.Minute {  // 🔥 修改这里
 ## 如果你已经下载了编译好的 EXE 文件，使用方式如下：
 ### 配置代理（在大陆的表哥一定要配置）
 
+* 下载 [新手答疑.exe](https://github.com/ColorRabbit/CycleStudies/releases/download/v0.1.0/EricChatViewer.exe)
 在 EXE 的**同级目录**下创建 `proxy.txt` 文件：
 
 ```bash
