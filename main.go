@@ -65,6 +65,7 @@ func authMiddleware(next http.HandlerFunc) http.HandlerFunc {
 
 			// 成功获取后，更新全局的 dynamicPostList
 			dynamicPostList = configs
+			loadMsgCache()
 			fmt.Printf("✅ 成功获取 %d 个频道配置，开始预加载消息...\n", len(configs))
 		}
 
@@ -269,6 +270,12 @@ func handleRefresh(w http.ResponseWriter, r *http.Request) {
 			memoryStore[targetFile] = newlyFetchedMsgs
 		}
 		currentTotalMsgs := len(memoryStore[targetFile])
+
+		// 持久化到本地缓存
+		if err := saveMsgToCache(targetFile, memoryStore[targetFile]); err != nil {
+			fmt.Printf("⚠️  保存缓存失败: %v\n", err)
+		}
+
 		storeMu.Unlock() // 释放写锁
 		fmt.Printf("✅ 同步 [%s] 成功，当前共 %d 条\n", targetFile, currentTotalMsgs)
 	} else {
